@@ -18,6 +18,7 @@ import com.aerolinea.bebold.service.VueloService;
 @RequestMapping("/Api/Vuelo")
 
 public class VueloController {
+	
 	private VueloService vueloService;
 
 	public VueloController(VueloService vueloService) {
