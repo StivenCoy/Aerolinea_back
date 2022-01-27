@@ -44,14 +44,14 @@ public class TiqueteServiceImpl implements TiqueteService{
 	}
 
 	@Override
-	public int descontarPorVuelos(int idPasajero, Date fechaInicio, Date fechaFin) {
+	public int calcularDescuentos(int idPasajero, Date fechaInicio, Date fechaFin) {
 		int cantidadTotalVuelos = 0;
 		int porcentageDescuento = 0;
-		List<String> cantidadVuelos = tiqueteRepository.contarVuelos(idPasajero, fechaInicio, fechaFin);
+		List<Integer> cantidadVuelos = tiqueteRepository.contarVuelos(idPasajero, fechaInicio, fechaFin);
 		Pasajero pasajero =  pasajeroRepository.findById(idPasajero).get();
 		if(cantidadVuelos != null) {
 			try {
-				cantidadTotalVuelos=Integer.parseInt(cantidadVuelos.get(0))+ Integer.parseInt(cantidadVuelos.get(0));
+				cantidadTotalVuelos=cantidadVuelos.get(0)+cantidadVuelos.get(0);
 				if(cantidadTotalVuelos > 10) {
 					porcentageDescuento = 10;
 				}
@@ -63,14 +63,14 @@ public class TiqueteServiceImpl implements TiqueteService{
 				System.out.println(" Error de casteo de numero");
 			}	
 		}
-		else {
+		else { 
 			porcentageDescuento = 5;
 		}
 		if(pasajero.getEdad() > 65) {
 			porcentageDescuento +=3;
 		}
 		if(pasajero.getTipoViajero().equals("Infantes")) {
-			porcentageDescuento=90;
+			porcentageDescuento+=90;
 		}
 		
 		return porcentageDescuento;

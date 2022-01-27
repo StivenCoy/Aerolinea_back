@@ -59,7 +59,7 @@ public class PasajeroController {
 	 * @param pasajero pasajero que se va a actualizar
 	 * @return retorna pasajero
 	 */
-	@PostMapping("/Viaje")
+	@GetMapping("/Viaje")
 	public ResponseEntity<String> verificarPasajeroFrecuente(
 			@RequestParam(value="idPasajero", required = false) int idPasajero,
 			@RequestParam(value="millas",required = false) double millas){

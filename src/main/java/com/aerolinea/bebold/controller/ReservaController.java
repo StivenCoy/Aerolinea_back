@@ -39,6 +39,15 @@ public class ReservaController  {
 		return ResponseEntity.ok(reservas);
 	}
 	
+	@GetMapping("/ListarD")
+	public ResponseEntity<List<List<String>>> listarReservasDatos(){
+		List<List<String>> reservas = reservaService.listarRegistrosDatos();
+		if(reservas.isEmpty()){
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(reservas);
+	}
+	
 	@PostMapping("/Crear")
 	public ResponseEntity<?> crearReserva(@RequestBody Reserva reserva)
 	{

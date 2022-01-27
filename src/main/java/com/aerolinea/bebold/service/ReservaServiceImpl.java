@@ -1,6 +1,5 @@
 package com.aerolinea.bebold.service;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -31,10 +30,16 @@ public class ReservaServiceImpl implements ReservaService{
 		
 		return reservaRepository.findAll();
 	}
+	
 
 	@Override
 	public Reserva crearRegistro(Reserva reserva) {
 		return reservaRepository.save(reserva);
+	}
+
+	@Override
+	public List<List<String>> listarRegistrosDatos() {
+		return reservaRepository.listarReservas();
 	}
 
 	

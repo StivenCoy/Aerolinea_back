@@ -8,5 +8,6 @@ public interface ReservaService {
 	
 	public List<Reserva> listarReservas();
 	public Reserva crearRegistro(Reserva reserva);
+	public List<List<String>> listarRegistrosDatos();
 
 }

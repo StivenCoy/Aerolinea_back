@@ -40,13 +40,13 @@ public class TiqueteController {
 	}
 	
 	
-	//falta postman
-	@GetMapping("/ContarVuelos")
-	public ResponseEntity<?> contarVuelos(
+	@GetMapping("/Descuentos")
+	public ResponseEntity<?> calcularDescuentos(
 			@RequestParam(value="fechaInicio") @DateTimeFormat( pattern ="yyyy-MM-dd" ) Date fechaInicio,
 			@RequestParam(value="fechaFin") @DateTimeFormat( pattern ="yyyy-MM-dd" ) Date fechaFin,
 			@RequestParam(value="idPasajero", required = false) int idPasajero){
-		int totalVuelos = tiqueteService.descontarPorVuelos(idPasajero, fechaInicio, fechaFin);
+		System.out.println(fechaInicio +" fff "+ fechaFin + " eee "+idPasajero + "\n");
+		int totalVuelos = tiqueteService.calcularDescuentos(idPasajero, fechaInicio, fechaFin);
 		return ResponseEntity.ok(totalVuelos);
 	}
 }
