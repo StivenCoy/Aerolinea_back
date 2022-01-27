@@ -60,15 +60,15 @@ public class PasajeroController {
 	 * @return retorna pasajero
 	 */
 	@PostMapping("/Viaje")
-	public ResponseEntity<Pasajero> agregarViaje(
+	public ResponseEntity<String> verificarPasajeroFrecuente(
 			@RequestParam(value="idPasajero", required = false) int idPasajero,
 			@RequestParam(value="millas",required = false) double millas){
-		Pasajero pasajero= pasajeroService.actualizarPasajero(idPasajero,millas);
-		if(pasajero != null) {
+		String millasViajadas= pasajeroService.verificarPasajeroFrecuente(idPasajero,millas);
+		if(millasViajadas.equals("")) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(pasajero);
+		return ResponseEntity.ok(millasViajadas);
 	}
 	
 }

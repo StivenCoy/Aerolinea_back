@@ -29,11 +29,23 @@ public class PasajeroServiceImpl implements PasajeroService{
 	}
 
 	@Override
-	public Pasajero actualizarPasajero(int idPasajero, double millas) {
+	public String verificarPasajeroFrecuente(int idPasajero, double millas) {
 		Optional<Pasajero> pasajero = pasajeroRepository.findById(idPasajero);
-		pasajero.get().setMillasViajadas(millas);
-		pasajero.get().setCantidadViajes();
-		return pasajeroRepository.save(pasajero.get());
+		Pasajero pasajeroEncontrado= pasajero.get();
+		String mensaje="";
+		double millasViajadas = 0;
+		if(pasajeroEncontrado != null){
+			if(pasajeroEncontrado.isFrecuente() == true) {
+				millasViajadas = pasajeroEncontrado.getMillasViajadas();
+				mensaje="Usted a viajado "+ millasViajadas + 
+						" Millas y con este vuelo llegaria a un total de  "+millasViajadas+millas + " millas";
+				return mensaje;
+			}
+			else {
+				return "";
+			}
+		}
+		return "";
 	}
 
 	

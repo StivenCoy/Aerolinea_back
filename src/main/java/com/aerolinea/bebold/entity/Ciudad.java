@@ -26,11 +26,11 @@ public class Ciudad implements Serializable {
 	@Column(nullable = false, name= "nombre")
 	private String nombre;
 	
-	@Column(nullable = false, name= "visa")
-	private String visa;
+	@Column(nullable = false, name= "isVisa")
+	private boolean isVisa;
 	
-	@Column(nullable = false, name= "nacional")
-	private String nacional;
+	@Column(nullable = false, name= "isNacional")
+	private boolean isNacional;
 	
 	
 	
@@ -42,21 +42,23 @@ public class Ciudad implements Serializable {
 		return nombre;
 	}
 
-	public String isVisa() {
-		return visa;
+	public boolean isVisa() {
+		return isVisa;
 	}
 
-	public void setVisa(String visa) {
-		this.visa = visa;
+	public void setVisa(boolean isVisa) {
+		this.isVisa = isVisa;
 	}
 
-	public String isNacional() {
-		return nacional;
+	public boolean isNacional() {
+		return isNacional;
 	}
 
-	public void setNacional(String nacional) {
-		this.nacional = nacional;
+	public void setNacional(boolean isNacional) {
+		this.isNacional = isNacional;
 	}
+
+	
 	
 	
 }

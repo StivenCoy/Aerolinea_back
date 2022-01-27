@@ -7,6 +7,6 @@ public interface PasajeroService {
 	
 	public Pasajero crearPasajero(Pasajero pasajero);
 	public Pasajero buscarPasajero(Integer idpasajero);
-	public Pasajero actualizarPasajero(int idPasajero, double millas);
+	public String verificarPasajeroFrecuente(int idPasajero, double millas);
 
 }

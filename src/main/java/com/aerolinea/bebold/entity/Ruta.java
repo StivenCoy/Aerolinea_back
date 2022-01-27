@@ -33,7 +33,6 @@ public class Ruta implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "ciudadOrigen", referencedColumnName = "idCiudad")
-	
 	private Ciudad ciudadOrigen;
 	
 	@ManyToOne

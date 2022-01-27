@@ -27,4 +27,6 @@ public class VueloServiceImpl implements VueloService{
 	public Vuelo buscarVuelo(int idvuelo){
 		return vueloRepository.findById(idvuelo).get();
 	}
+
+
 }

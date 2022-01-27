@@ -29,8 +29,8 @@ public class Vuelo implements Serializable {
 	@Column(nullable = false, name= "fecha")
 	private Date fecha;
 	
-	@Column(nullable = false, name= "escala")
-	private String escala;
+	@Column(nullable = false, name= "isEscala")
+	private String isEscala;
 	
 	@Column(nullable = false, name= "numero")
 	private String numero;
@@ -60,12 +60,12 @@ public class Vuelo implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public String isEscala() {
-		return escala;
+	public String getIsEscala() {
+		return isEscala;
 	}
 
-	public void setEscala(String escala) {
-		this.escala = escala;
+	public void setIsEscala(String isEscala) {
+		this.isEscala = isEscala;
 	}
 
 	public String getNumero() {
@@ -84,8 +84,8 @@ public class Vuelo implements Serializable {
 		return sillasDisponibles;
 	}
 
-	public void setSillasDisponibles(int sillasDisponibles) {
-		this.sillasDisponibles += sillasDisponibles;
+	public void setSillasDisponibles() {
+		this.sillasDisponibles +=1;
 	}
 
 	public double getPrecio() {

@@ -50,6 +50,25 @@ public class Pasajero implements Serializable {
 	
 	@Column(nullable = false , name="tipoViajero")
 	private String tipoViajero;
+	
+	@Column(nullable = false , name="isFrecuente")
+	private boolean isFrecuente;
+	
+	
+	public boolean isMayorEdad() {
+		if(edad >= 18) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isFrecuente() {
+		return isFrecuente;
+	}
+
+	public void setFrecuente(boolean isFrecuente) {
+		this.isFrecuente = isFrecuente;
+	}
 
 	public int getIdPasajero() {
 		return idPasajero;
