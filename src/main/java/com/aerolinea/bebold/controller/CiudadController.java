@@ -21,8 +21,13 @@ public class CiudadController {
 		this.ciudadService = ciudadService;
 	}
 	
+	/**
+	 * Metodo que busca si una ciudad requiere visa o no 
+	 * @param nombre nombre de la ciudad 
+	 * @return retorna true si necesita visa en caso contrario false 
+	 */
 	@GetMapping("/Visa/{nombre}")
-	public ResponseEntity<Boolean> buscar(@PathVariable(value ="nombre") String nombre){
+	public ResponseEntity<Boolean> isVisa(@PathVariable(value ="nombre") String nombre){
 		boolean isVisa= ciudadService.isVisa(nombre);
 		return ResponseEntity.ok(isVisa);
 	}

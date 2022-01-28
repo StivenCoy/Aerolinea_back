@@ -55,9 +55,10 @@ public class PasajeroController {
 	}
 	
 	/**
-	 * Metodo que actualiza un viaje para aumentar las millas y la cantidad de viajes
-	 * @param pasajero pasajero que se va a actualizar
-	 * @return retorna pasajero
+	 * Metodo que verifica si un pasajero es frecuente si es frecuente le muestra la cantidad 
+	 * de millas que lleva y cuantas acumula con el viaje
+	 * @param pasajero pasajero que se va a verificar
+	 * @return String el mensaje si es o no frecuente
 	 */
 	@GetMapping("/Viaje")
 	public ResponseEntity<String> verificarPasajeroFrecuente(

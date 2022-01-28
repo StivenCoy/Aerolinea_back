@@ -39,7 +39,13 @@ public class TiqueteController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(tiqueteService.crearTiquete(tiquete));
 	}
 	
-	
+	/**
+	 * Metodo que calcula el porcentaje de descuentos a ser aplicados a un pasajero segun las reglas de negocio
+	 * @param fechaInicio fecha de inicio del año 
+	 * @param fechaFin fecha fin del año 
+	 * @param idPasajero identificador del pasajero 
+	 * @return retorna el valor en porcentaje del descuento que se le aplicara al pasajero
+	 */
 	@GetMapping("/Descuentos")
 	public ResponseEntity<?> calcularDescuentos(
 			@RequestParam(value="fechaInicio") @DateTimeFormat( pattern ="yyyy-MM-dd" ) Date fechaInicio,
